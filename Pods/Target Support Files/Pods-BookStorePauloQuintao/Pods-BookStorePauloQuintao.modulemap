@@ -1,0 +1,6 @@
+framework module Pods_BookStorePauloQuintao {
+  umbrella header "Pods-BookStorePauloQuintao-umbrella.h"
+
+  export *
+  module * { export * }
+}
