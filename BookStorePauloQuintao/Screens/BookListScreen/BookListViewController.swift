@@ -12,26 +12,33 @@ class BookListViewController: UIViewController {
     @IBOutlet weak var customHeaderView: CustomHeaderView!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    private var isRefreshing:Bool = false
+    private var lastContentOffset:CGFloat = 0
     let refreshControl = UIRefreshControl()
     
-    private var isLoding:Bool = false
-    private var listEmpty:Bool = false
-    private var lastContentOffset: CGFloat = 0
+    lazy var viewModal = {
+        BookViewModal()
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
         setupView()
+        initViewModal()
+    }
+    
+    func initViewModal(){
+        self.viewModal.getBooks()
+        
+        viewModal.reloadCollectionView = { [weak self] in
+            
+            self?.collectionView.reloadData()
+            self?.refreshControl.endRefreshing()
+        }
     }
     
     @objc func handleRefreshControl() {
-        self.isRefreshing = true
-        self.isLoding = true
-        self.listEmpty = false
-        //self.viewModel.resetItems()
-        //self.viewModel.getStockItems(isRefreshing: true)
+        self.viewModal.resetBooks()
+        self.viewModal.getBooks()
     }
     
     func setupView(){
@@ -59,12 +66,13 @@ class BookListViewController: UIViewController {
 
 extension BookListViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return self.viewModal.bookCellViewModals.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BookCell.identifier, for: indexPath) as? BookCell else { fatalError("xib does not exists") }
-        
+        let cellVM = viewModal.getBookCellViewModel(at: indexPath)
+        cell.cellViewModel = cellVM
         return cell
     }
     
@@ -73,6 +81,8 @@ extension BookListViewController : UICollectionViewDelegate, UICollectionViewDat
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "detailBookVC") as! DetailBookViewController
         
         vc.delegate = self
+        let cellVM = viewModal.getBookCellViewModel(at: indexPath)
+        vc.book = viewModal.books.filter({$0.id == cellVM.id}).first
         
         self.navigationController?.pushViewController(vc, animated: true)
     }
@@ -88,10 +98,9 @@ extension BookListViewController : UICollectionViewDelegate, UICollectionViewDat
             let contentHeigth:CGFloat = collectionView.contentSize.height - collectionView.frame.size.height
             
             // Check if is in the end and can load more items
-            if Int(contentHeigth) > 0 && Int(positionAtual) >= Int(contentHeigth) && !isLoding && !listEmpty{
+            if Int(contentHeigth) > 0 && Int(positionAtual) >= Int(contentHeigth) && !viewModal.isLoding && !viewModal.listEmpty{
                 print("REQUEST DATA OFFSET")
-                self.isLoding = true
-                //self.viewModel.getStockItems(isRefreshing: false)
+                self.viewModal.getBooks()
             }
         }
         // update the new position acquired
@@ -101,14 +110,16 @@ extension BookListViewController : UICollectionViewDelegate, UICollectionViewDat
 
 extension BookListViewController : CustomHeaderViewDelegate{
     func filterByFavorites(isFavorite: Bool) {
-        
+        self.viewModal.filterByFavorite(isFavorites: isFavorite)
     }
 }
 
 extension BookListViewController : DetailBookViewControllerDelegate{
-    func didCloseDetails(vc: DetailBookViewController) {
+    func didCloseDetails(book:Book?, vc: DetailBookViewController) {
         vc.navigationController?.popViewController(animated: true, completion: {
-            self.collectionView.reloadData()
+            if let book = book {
+                self.viewModal.reloadListBooks(book: book)
+            }
         })
     }
 }

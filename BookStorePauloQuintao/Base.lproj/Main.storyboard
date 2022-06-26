@@ -148,6 +148,10 @@
                                                     <action selector="onBuyBookPressed:" destination="qBL-PS-XEL" eventType="touchUpInside" id="nhK-oU-pbj"/>
                                                 </connections>
                                             </button>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="h4y-1D-4Vs">
+                                                <rect key="frame" x="84.5" y="124.5" width="37" height="37"/>
+                                                <color key="color" systemColor="labelColor"/>
+                                            </activityIndicatorView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -156,6 +160,7 @@
                                             <constraint firstAttribute="trailing" secondItem="psQ-xO-z8y" secondAttribute="trailing" constant="20" id="7Fj-Bq-E3h"/>
                                             <constraint firstItem="psQ-xO-z8y" firstAttribute="top" secondItem="uhz-Cx-umo" secondAttribute="bottom" constant="20" id="AYe-xs-KfB"/>
                                             <constraint firstItem="kco-DT-4bH" firstAttribute="leading" secondItem="uhz-Cx-umo" secondAttribute="trailing" constant="10" id="B6l-xg-7oS"/>
+                                            <constraint firstItem="h4y-1D-4Vs" firstAttribute="centerX" secondItem="uhz-Cx-umo" secondAttribute="centerX" id="R7p-iq-fI6"/>
                                             <constraint firstAttribute="trailing" secondItem="yqf-za-aal" secondAttribute="trailing" constant="20" id="U5X-Jt-xHs"/>
                                             <constraint firstItem="kco-DT-4bH" firstAttribute="top" secondItem="ZFx-xZ-B4x" secondAttribute="top" constant="20" id="bsg-E3-85T"/>
                                             <constraint firstAttribute="trailing" secondItem="kco-DT-4bH" secondAttribute="trailing" constant="10" id="buh-42-5bB"/>
@@ -163,6 +168,7 @@
                                             <constraint firstItem="jIE-m4-aSa" firstAttribute="leading" secondItem="uhz-Cx-umo" secondAttribute="leading" id="khP-Bc-3mK"/>
                                             <constraint firstItem="kco-DT-4bH" firstAttribute="bottom" secondItem="uhz-Cx-umo" secondAttribute="bottom" id="lWG-16-9dN"/>
                                             <constraint firstItem="yqf-za-aal" firstAttribute="top" secondItem="psQ-xO-z8y" secondAttribute="bottom" constant="20" id="loY-U1-wx4"/>
+                                            <constraint firstItem="h4y-1D-4Vs" firstAttribute="centerY" secondItem="uhz-Cx-umo" secondAttribute="centerY" id="m8M-Y8-s7d"/>
                                             <constraint firstItem="jIE-m4-aSa" firstAttribute="width" secondItem="ZFx-xZ-B4x" secondAttribute="width" multiplier="0.1" id="mSq-yI-LiI"/>
                                             <constraint firstItem="uhz-Cx-umo" firstAttribute="top" secondItem="ZFx-xZ-B4x" secondAttribute="top" constant="20" id="mXG-hs-fLY"/>
                                             <constraint firstItem="uhz-Cx-umo" firstAttribute="width" secondItem="ZFx-xZ-B4x" secondAttribute="width" multiplier="0.4" id="wB4-As-axP"/>
@@ -194,11 +200,13 @@
                     </view>
                     <connections>
                         <outlet property="buttonBuyBook" destination="yqf-za-aal" id="7mP-ht-3Ra"/>
+                        <outlet property="buttonFavorite" destination="jIE-m4-aSa" id="PL8-qk-8qy"/>
                         <outlet property="customHeaderView" destination="ry1-Z1-q2k" id="hst-LT-0Gl"/>
                         <outlet property="imageViewBook" destination="uhz-Cx-umo" id="ra8-A5-TxN"/>
                         <outlet property="labelBookAuthor" destination="3Mn-ur-lHP" id="H9p-Ex-ZRz"/>
                         <outlet property="labelBookDescription" destination="psQ-xO-z8y" id="Wt8-vA-QYB"/>
                         <outlet property="labelBookTitle" destination="Gu0-UB-axh" id="uR4-dv-maY"/>
+                        <outlet property="loadImage" destination="h4y-1D-4Vs" id="hEk-pE-Z92"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8YF-OP-HZy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

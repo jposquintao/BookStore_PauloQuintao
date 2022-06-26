@@ -22,6 +22,13 @@
 		A7053242286875B600E01F1D /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7053241286875B600E01F1D /* Utils.swift */; };
 		A7053247286876F500E01F1D /* DetailBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7053246286876F500E01F1D /* DetailBookViewController.swift */; };
 		A705324928687B3500E01F1D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A705324828687B3500E01F1D /* Extensions.swift */; };
+		A705324C28687DE900E01F1D /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = A705324B28687DE900E01F1D /* Book.swift */; };
+		A705324F2868821800E01F1D /* BookViewModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A705324E2868821800E01F1D /* BookViewModal.swift */; };
+		A7053252286882E100E01F1D /* BookCellViewModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7053251286882E100E01F1D /* BookCellViewModal.swift */; };
+		A70532562868BB3200E01F1D /* RequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70532552868BB3200E01F1D /* RequestHandler.swift */; };
+		A70532582868BB4000E01F1D /* WebApiPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70532572868BB4000E01F1D /* WebApiPaths.swift */; };
+		A705325A2868BC7E00E01F1D /* BookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70532592868BC7E00E01F1D /* BookService.swift */; };
+		A705325C2868C70000E01F1D /* BookDetailsViewModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A705325B2868C70000E01F1D /* BookDetailsViewModal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +49,13 @@
 		A7053241286875B600E01F1D /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		A7053246286876F500E01F1D /* DetailBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookViewController.swift; sourceTree = "<group>"; };
 		A705324828687B3500E01F1D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		A705324B28687DE900E01F1D /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		A705324E2868821800E01F1D /* BookViewModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewModal.swift; sourceTree = "<group>"; };
+		A7053251286882E100E01F1D /* BookCellViewModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCellViewModal.swift; sourceTree = "<group>"; };
+		A70532552868BB3200E01F1D /* RequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestHandler.swift; sourceTree = "<group>"; };
+		A70532572868BB4000E01F1D /* WebApiPaths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebApiPaths.swift; sourceTree = "<group>"; };
+		A70532592868BC7E00E01F1D /* BookService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookService.swift; sourceTree = "<group>"; };
+		A705325B2868C70000E01F1D /* BookDetailsViewModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsViewModal.swift; sourceTree = "<group>"; };
 		AA8B829C4E211545068856ED /* Pods-BookStorePauloQuintao.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookStorePauloQuintao.debug.xcconfig"; path = "Target Support Files/Pods-BookStorePauloQuintao/Pods-BookStorePauloQuintao.debug.xcconfig"; sourceTree = "<group>"; };
 		D846262EE77A2E2C5395529C /* Pods_BookStorePauloQuintao.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookStorePauloQuintao.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -96,9 +110,11 @@
 		A705321B286869A200E01F1D /* BookStorePauloQuintao */ = {
 			isa = PBXGroup;
 			children = (
+				A70532532868BB1200E01F1D /* WebApiHandler */,
 				A705323B2868758700E01F1D /* SupportFiles */,
+				A705324A28687DD800E01F1D /* Modal */,
+				A705324D2868820400E01F1D /* ViewModal */,
 				A705323028686EB700E01F1D /* CustomViews */,
-				A70532352868726F00E01F1D /* CollectionViewCells */,
 				A70532432868767300E01F1D /* Screens */,
 				A705321C286869A300E01F1D /* AppDelegate.swift */,
 				A705321E286869A300E01F1D /* SceneDelegate.swift */,
@@ -122,6 +138,7 @@
 		A70532352868726F00E01F1D /* CollectionViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				A7053250286882CC00E01F1D /* CellViewModal */,
 				A70532362868727800E01F1D /* BookCell */,
 			);
 			path = CollectionViewCells;
@@ -158,6 +175,7 @@
 		A70532442868768400E01F1D /* BookListScreen */ = {
 			isa = PBXGroup;
 			children = (
+				A70532352868726F00E01F1D /* CollectionViewCells */,
 				A7053220286869A300E01F1D /* BookListViewController.swift */,
 			);
 			path = BookListScreen;
@@ -169,6 +187,49 @@
 				A7053246286876F500E01F1D /* DetailBookViewController.swift */,
 			);
 			path = DetailBookScreen;
+			sourceTree = "<group>";
+		};
+		A705324A28687DD800E01F1D /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				A705324B28687DE900E01F1D /* Book.swift */,
+			);
+			path = Modal;
+			sourceTree = "<group>";
+		};
+		A705324D2868820400E01F1D /* ViewModal */ = {
+			isa = PBXGroup;
+			children = (
+				A705324E2868821800E01F1D /* BookViewModal.swift */,
+				A705325B2868C70000E01F1D /* BookDetailsViewModal.swift */,
+			);
+			path = ViewModal;
+			sourceTree = "<group>";
+		};
+		A7053250286882CC00E01F1D /* CellViewModal */ = {
+			isa = PBXGroup;
+			children = (
+				A7053251286882E100E01F1D /* BookCellViewModal.swift */,
+			);
+			path = CellViewModal;
+			sourceTree = "<group>";
+		};
+		A70532532868BB1200E01F1D /* WebApiHandler */ = {
+			isa = PBXGroup;
+			children = (
+				A70532542868BB2400E01F1D /* Services */,
+				A70532552868BB3200E01F1D /* RequestHandler.swift */,
+				A70532572868BB4000E01F1D /* WebApiPaths.swift */,
+			);
+			path = WebApiHandler;
+			sourceTree = "<group>";
+		};
+		A70532542868BB2400E01F1D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A70532592868BC7E00E01F1D /* BookService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,10 +351,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				A705323428686F0500E01F1D /* CustomHeaderView.swift in Sources */,
+				A705324F2868821800E01F1D /* BookViewModal.swift in Sources */,
+				A705325A2868BC7E00E01F1D /* BookService.swift in Sources */,
+				A705325C2868C70000E01F1D /* BookDetailsViewModal.swift in Sources */,
+				A70532562868BB3200E01F1D /* RequestHandler.swift in Sources */,
 				A7053221286869A300E01F1D /* BookListViewController.swift in Sources */,
+				A7053252286882E100E01F1D /* BookCellViewModal.swift in Sources */,
 				A705321D286869A300E01F1D /* AppDelegate.swift in Sources */,
 				A705324928687B3500E01F1D /* Extensions.swift in Sources */,
 				A705321F286869A300E01F1D /* SceneDelegate.swift in Sources */,
+				A705324C28687DE900E01F1D /* Book.swift in Sources */,
+				A70532582868BB4000E01F1D /* WebApiPaths.swift in Sources */,
 				A705323A2868729400E01F1D /* BookCell.swift in Sources */,
 				A7053247286876F500E01F1D /* DetailBookViewController.swift in Sources */,
 				A7053242286875B600E01F1D /* Utils.swift in Sources */,
@@ -458,6 +526,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -487,6 +556,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

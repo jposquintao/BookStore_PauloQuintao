@@ -45,3 +45,57 @@ extension UINavigationController {
         self.view.layer.add(transition, forKey: nil)
     }
 }
+
+let imageCache = NSCache<AnyObject, AnyObject>()
+
+extension UIImageView {
+    func cacheImage(urlString: String?, loadImage:UIActivityIndicatorView?, defaultImage:String){
+        
+        if let load = loadImage{
+            load.isHidden = false
+            load.startAnimating()
+        }
+        
+        image = nil
+        
+        if let us = urlString, let url = URL(string: us){
+            if let imageFromCache = imageCache.object(forKey: us as AnyObject) as? UIImage {
+                DispatchQueue.main.async {
+                    self.image = imageFromCache
+                    if let load = loadImage{
+                        load.stopAnimating()
+                    }
+                }
+                return
+            }
+            
+            URLSession.shared.dataTask(with: url) {
+                data, response, error in
+                if let response = data {
+                    DispatchQueue.main.async {
+                        if let imageToCache = UIImage(data: response){
+                            imageCache.setObject(imageToCache, forKey: us as AnyObject)
+                            self.image = imageToCache
+                            if let load = loadImage{
+                                load.stopAnimating()
+                            }
+                        }
+                    }
+                }else{
+                    DispatchQueue.main.async {
+                        self.image = UIImage(systemName: defaultImage)
+                        if let load = loadImage{
+                            load.stopAnimating()
+                        }
+                    }
+                    
+                }
+                }.resume()
+        }else{
+            self.image = UIImage(systemName: defaultImage)
+            if let load = loadImage{
+                load.stopAnimating()
+            }
+        }
+    }
+}
