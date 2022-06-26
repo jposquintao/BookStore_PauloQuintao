@@ -7,23 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		337EFF25B0BE84AA14F3EE2F /* Pods_BookStorePauloQuintao.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D846262EE77A2E2C5395529C /* Pods_BookStorePauloQuintao.framework */; };
 		A705321D286869A300E01F1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A705321C286869A300E01F1D /* AppDelegate.swift */; };
 		A705321F286869A300E01F1D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A705321E286869A300E01F1D /* SceneDelegate.swift */; };
-		A7053221286869A300E01F1D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7053220286869A300E01F1D /* ViewController.swift */; };
+		A7053221286869A300E01F1D /* BookListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7053220286869A300E01F1D /* BookListViewController.swift */; };
 		A7053224286869A300E01F1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7053222286869A300E01F1D /* Main.storyboard */; };
 		A7053226286869A400E01F1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7053225286869A400E01F1D /* Assets.xcassets */; };
 		A7053229286869A400E01F1D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7053227286869A400E01F1D /* LaunchScreen.storyboard */; };
+		A705323228686EFA00E01F1D /* CustomHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A705323128686EFA00E01F1D /* CustomHeaderView.xib */; };
+		A705323428686F0500E01F1D /* CustomHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A705323328686F0500E01F1D /* CustomHeaderView.swift */; };
+		A70532382868728600E01F1D /* BookCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A70532372868728600E01F1D /* BookCell.xib */; };
+		A705323A2868729400E01F1D /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70532392868729400E01F1D /* BookCell.swift */; };
+		A705323E2868759C00E01F1D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A70532402868759C00E01F1D /* Localizable.strings */; };
+		A7053242286875B600E01F1D /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7053241286875B600E01F1D /* Utils.swift */; };
+		A7053247286876F500E01F1D /* DetailBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7053246286876F500E01F1D /* DetailBookViewController.swift */; };
+		A705324928687B3500E01F1D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A705324828687B3500E01F1D /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B80D317CBAB5507CD4C73D8 /* Pods-BookStorePauloQuintao.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookStorePauloQuintao.release.xcconfig"; path = "Target Support Files/Pods-BookStorePauloQuintao/Pods-BookStorePauloQuintao.release.xcconfig"; sourceTree = "<group>"; };
 		A7053219286869A200E01F1D /* BookStorePauloQuintao.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookStorePauloQuintao.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A705321C286869A300E01F1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A705321E286869A300E01F1D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A7053220286869A300E01F1D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A7053220286869A300E01F1D /* BookListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListViewController.swift; sourceTree = "<group>"; };
 		A7053223286869A300E01F1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A7053225286869A400E01F1D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A7053228286869A400E01F1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A705322A286869A400E01F1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A705323128686EFA00E01F1D /* CustomHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomHeaderView.xib; sourceTree = "<group>"; };
+		A705323328686F0500E01F1D /* CustomHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderView.swift; sourceTree = "<group>"; };
+		A70532372868728600E01F1D /* BookCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookCell.xib; sourceTree = "<group>"; };
+		A70532392868729400E01F1D /* BookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
+		A705323F2868759C00E01F1D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A7053241286875B600E01F1D /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		A7053246286876F500E01F1D /* DetailBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookViewController.swift; sourceTree = "<group>"; };
+		A705324828687B3500E01F1D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		AA8B829C4E211545068856ED /* Pods-BookStorePauloQuintao.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookStorePauloQuintao.debug.xcconfig"; path = "Target Support Files/Pods-BookStorePauloQuintao/Pods-BookStorePauloQuintao.debug.xcconfig"; sourceTree = "<group>"; };
+		D846262EE77A2E2C5395529C /* Pods_BookStorePauloQuintao.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookStorePauloQuintao.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +51,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				337EFF25B0BE84AA14F3EE2F /* Pods_BookStorePauloQuintao.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5AD5E9F80963740E8CCFC18F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D846262EE77A2E2C5395529C /* Pods_BookStorePauloQuintao.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A5432C8A3578EF917BC4956F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AA8B829C4E211545068856ED /* Pods-BookStorePauloQuintao.debug.xcconfig */,
+				3B80D317CBAB5507CD4C73D8 /* Pods-BookStorePauloQuintao.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A7053210286869A200E01F1D = {
 			isa = PBXGroup;
 			children = (
 				A705321B286869A200E01F1D /* BookStorePauloQuintao */,
 				A705321A286869A200E01F1D /* Products */,
+				A5432C8A3578EF917BC4956F /* Pods */,
+				5AD5E9F80963740E8CCFC18F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +96,79 @@
 		A705321B286869A200E01F1D /* BookStorePauloQuintao */ = {
 			isa = PBXGroup;
 			children = (
+				A705323B2868758700E01F1D /* SupportFiles */,
+				A705323028686EB700E01F1D /* CustomViews */,
+				A70532352868726F00E01F1D /* CollectionViewCells */,
+				A70532432868767300E01F1D /* Screens */,
 				A705321C286869A300E01F1D /* AppDelegate.swift */,
 				A705321E286869A300E01F1D /* SceneDelegate.swift */,
-				A7053220286869A300E01F1D /* ViewController.swift */,
 				A7053222286869A300E01F1D /* Main.storyboard */,
 				A7053225286869A400E01F1D /* Assets.xcassets */,
 				A7053227286869A400E01F1D /* LaunchScreen.storyboard */,
 				A705322A286869A400E01F1D /* Info.plist */,
 			);
 			path = BookStorePauloQuintao;
+			sourceTree = "<group>";
+		};
+		A705323028686EB700E01F1D /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				A705323128686EFA00E01F1D /* CustomHeaderView.xib */,
+				A705323328686F0500E01F1D /* CustomHeaderView.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		A70532352868726F00E01F1D /* CollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				A70532362868727800E01F1D /* BookCell */,
+			);
+			path = CollectionViewCells;
+			sourceTree = "<group>";
+		};
+		A70532362868727800E01F1D /* BookCell */ = {
+			isa = PBXGroup;
+			children = (
+				A70532372868728600E01F1D /* BookCell.xib */,
+				A70532392868729400E01F1D /* BookCell.swift */,
+			);
+			path = BookCell;
+			sourceTree = "<group>";
+		};
+		A705323B2868758700E01F1D /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				A70532402868759C00E01F1D /* Localizable.strings */,
+				A7053241286875B600E01F1D /* Utils.swift */,
+				A705324828687B3500E01F1D /* Extensions.swift */,
+			);
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		A70532432868767300E01F1D /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				A70532452868768D00E01F1D /* DetailBookScreen */,
+				A70532442868768400E01F1D /* BookListScreen */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		A70532442868768400E01F1D /* BookListScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A7053220286869A300E01F1D /* BookListViewController.swift */,
+			);
+			path = BookListScreen;
+			sourceTree = "<group>";
+		};
+		A70532452868768D00E01F1D /* DetailBookScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A7053246286876F500E01F1D /* DetailBookViewController.swift */,
+			);
+			path = DetailBookScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +178,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A705322D286869A400E01F1D /* Build configuration list for PBXNativeTarget "BookStorePauloQuintao" */;
 			buildPhases = (
+				119D5D08C920495B26B2F7E4 /* [CP] Check Pods Manifest.lock */,
 				A7053215286869A200E01F1D /* Sources */,
 				A7053216286869A200E01F1D /* Frameworks */,
 				A7053217286869A200E01F1D /* Resources */,
+				2D93247536C4674F3A15AADF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -125,6 +231,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A705323228686EFA00E01F1D /* CustomHeaderView.xib in Resources */,
+				A705323E2868759C00E01F1D /* Localizable.strings in Resources */,
+				A70532382868728600E01F1D /* BookCell.xib in Resources */,
 				A7053229286869A400E01F1D /* LaunchScreen.storyboard in Resources */,
 				A7053226286869A400E01F1D /* Assets.xcassets in Resources */,
 				A7053224286869A300E01F1D /* Main.storyboard in Resources */,
@@ -133,14 +242,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		119D5D08C920495B26B2F7E4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BookStorePauloQuintao-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2D93247536C4674F3A15AADF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BookStorePauloQuintao/Pods-BookStorePauloQuintao-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BookStorePauloQuintao/Pods-BookStorePauloQuintao-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BookStorePauloQuintao/Pods-BookStorePauloQuintao-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A7053215286869A200E01F1D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7053221286869A300E01F1D /* ViewController.swift in Sources */,
+				A705323428686F0500E01F1D /* CustomHeaderView.swift in Sources */,
+				A7053221286869A300E01F1D /* BookListViewController.swift in Sources */,
 				A705321D286869A300E01F1D /* AppDelegate.swift in Sources */,
+				A705324928687B3500E01F1D /* Extensions.swift in Sources */,
 				A705321F286869A300E01F1D /* SceneDelegate.swift in Sources */,
+				A705323A2868729400E01F1D /* BookCell.swift in Sources */,
+				A7053247286876F500E01F1D /* DetailBookViewController.swift in Sources */,
+				A7053242286875B600E01F1D /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,6 +317,14 @@
 				A7053228286869A400E01F1D /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A70532402868759C00E01F1D /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A705323F2868759C00E01F1D /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -282,6 +446,7 @@
 		};
 		A705322E286869A400E01F1D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA8B829C4E211545068856ED /* Pods-BookStorePauloQuintao.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -310,6 +475,7 @@
 		};
 		A705322F286869A400E01F1D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B80D317CBAB5507CD4C73D8 /* Pods-BookStorePauloQuintao.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
