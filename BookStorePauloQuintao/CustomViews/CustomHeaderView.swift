@@ -19,6 +19,9 @@ class CustomHeaderView : UIView{
     @IBOutlet weak var labelHeader: UILabel!
     @IBOutlet weak var buttonBack: UIButton!
     @IBOutlet weak var buttonFavorites: UIButton!
+    @IBOutlet weak var imageViewFavorite: UIImageView!
+    @IBOutlet weak var viewFavorite: UIView!
+    @IBOutlet weak var viewBack: UIView!
     
     weak var delegate : CustomHeaderViewDelegate? = nil
     
@@ -48,11 +51,11 @@ class CustomHeaderView : UIView{
     }
     
     @IBAction func onFavoriteButtonPressed(_ sender: Any) {
-        if buttonFavorites.currentImage == UIImage(systemName: "star"){
-            buttonFavorites.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        if imageViewFavorite.image == UIImage(systemName: "star"){
+            imageViewFavorite.image = UIImage(systemName: "star.fill")
             self.delegate?.filterByFavorites?(isFavorite: true)
         }else{
-            buttonFavorites.setImage(UIImage(systemName: "star"), for: .normal)
+            imageViewFavorite.image = UIImage(systemName: "star")
             self.delegate?.filterByFavorites?(isFavorite: false)
         }
     }
@@ -60,11 +63,11 @@ class CustomHeaderView : UIView{
     // Setups header view in the list VC
     func setupForList(){
         labelHeader.text = Utils.translate("book_store")
-        buttonBack.isHidden = true
+        viewBack.isHidden = true
     }
     
     // Setups header view for details VC
     func setupForDetails(){
-        buttonFavorites.isHidden = true
+        viewFavorite.isHidden = true
     }
 }

@@ -22,6 +22,7 @@ class DetailBookViewController : UIViewController{
     @IBOutlet weak var customHeaderView: CustomHeaderView!
     @IBOutlet weak var loadImage: UIActivityIndicatorView!
     @IBOutlet weak var buttonFavorite: UIButton!
+    @IBOutlet weak var imageViewFavorite: UIImageView!
     
     weak var delegate : DetailBookViewControllerDelegate? = nil
     
@@ -64,6 +65,7 @@ class DetailBookViewController : UIViewController{
         buttonBuyBook.setTitle(Utils.translate("buy_link"), for: .normal)
     }
     
+    // Initiate Book info in UI
     func setupBookInfo(){
         if let book = book {
             imageViewBook.cacheImage(urlString: book.thumbnail, loadImage: loadImage, defaultImage: "book.closed.fill")
@@ -71,7 +73,9 @@ class DetailBookViewController : UIViewController{
             labelBookAuthor.text = book.author
             labelBookDescription.text = book.description
             buttonBuyBook.isHidden = book.link == nil
-            buttonFavorite.setImage(UIImage(systemName: book.favorite ? "star.fill" : "star"), for: .normal)
+            imageViewFavorite.image = UIImage(systemName: book.favorite ? "star.fill" : "star")
+            
+            customHeaderView.labelHeader.text = book.title
         }
     }
 }

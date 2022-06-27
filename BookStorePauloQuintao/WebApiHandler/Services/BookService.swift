@@ -13,8 +13,8 @@ protocol BookServiceProtocol {
 
 class BookService: BookServiceProtocol {
     
+    // Request List of books from API
     func getBooks(offset:String, completion: @escaping (Bool, Books?, String?) -> ()){
-        
         RequestHandler.RequestBooks.getBooks(offset: offset) { books, status, error in
             if let error = error {
                 completion(false, nil, error.localizedDescription)

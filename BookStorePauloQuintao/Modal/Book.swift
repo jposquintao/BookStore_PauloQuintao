@@ -29,10 +29,12 @@ class Book : Codable{
     }
     
     init?(json:[String:AnyObject]){
+        // get favorite books saved
         let favoriteBooks = Book.getBooks()
         
         if let value = json["id"] as? String{
             self.id = value
+            // check if has book saved as favorite and set var
             self.favorite = favoriteBooks.contains(where: {$0.id == value})
         }else{
             return nil
@@ -71,11 +73,13 @@ class Book : Codable{
         }
     }
     
+    // Save favorite books in UserDefaults
     public static func saveBooks(books:[Book]){
         let booksData = try! JSONEncoder().encode(books)
         UserDefaults.standard.set(booksData, forKey: "saved_favorite_books")
     }
 
+    // Get favorite books from UserDefaults
     public static func getBooks() -> [Book]{
         if let booksData = UserDefaults.standard.data(forKey: "saved_favorite_books"){
             let booksArray = try! JSONDecoder().decode([Book].self, from: booksData)

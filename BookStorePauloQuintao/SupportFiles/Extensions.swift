@@ -46,6 +46,8 @@ extension UINavigationController {
     }
 }
 
+// Load Image From URL and save cache
+
 let imageCache = NSCache<AnyObject, AnyObject>()
 
 extension UIImageView {

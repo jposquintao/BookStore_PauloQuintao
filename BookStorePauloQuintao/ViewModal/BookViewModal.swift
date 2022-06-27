@@ -15,6 +15,9 @@ class BookViewModal : NSObject{
     // Has no more results to load
     var listEmpty:Bool = false
     
+    // Is showing favorites
+    var showingFavorites:Bool = false
+    
     var reloadCollectionView: (() -> (Void))?
     
     var books = Books()
@@ -62,17 +65,25 @@ class BookViewModal : NSObject{
     
     // Set book opened new info
     func reloadListBooks(book:Book){
-        if let auxbook = books.filter({$0.id == book.id}).first{
-            auxbook.favorite = book.favorite
+        if showingFavorites{
+            self.filterByFavorite(isFavorites: true)
+        }else{
+            if let auxbook = books.filter({$0.id == book.id}).first{
+                auxbook.favorite = book.favorite
+            }
         }
     }
     
     // Filter books by favorites
     func filterByFavorite(isFavorites:Bool){
         if isFavorites{
+            self.listEmpty = true
+            self.showingFavorites = true
             let books = Book.getBooks()
             setupListBookCellModal(books: books)
         }else{
+            self.showingFavorites = false
+            self.listEmpty = false
             setupListBookCellModal(books: self.books)
         }
     }

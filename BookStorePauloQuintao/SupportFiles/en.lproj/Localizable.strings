@@ -9,3 +9,6 @@
 "book_store" = "Book Store";
 "buy_link" = "Buy Book Link";
 
+"no_results" = "No results to show";
+"no_favorites" = "No favorites books saved";
+

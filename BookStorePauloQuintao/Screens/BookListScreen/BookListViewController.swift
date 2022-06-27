@@ -11,6 +11,7 @@ class BookListViewController: UIViewController {
 
     @IBOutlet weak var customHeaderView: CustomHeaderView!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var labelNoResults: UILabel!
     
     private var lastContentOffset:CGFloat = 0
     let refreshControl = UIRefreshControl()
@@ -33,6 +34,13 @@ class BookListViewController: UIViewController {
             
             self?.collectionView.reloadData()
             self?.refreshControl.endRefreshing()
+            
+            if let empty = self?.viewModal.bookCellViewModals.isEmpty, empty{
+                self?.labelNoResults.isHidden = false
+                self?.labelNoResults.text = (self?.viewModal.showingFavorites ?? false) ? Utils.translate("no_favorites") : Utils.translate("no_results")
+            }else{
+                self?.labelNoResults.isHidden = true
+            }
         }
     }
     
