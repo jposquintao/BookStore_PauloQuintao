@@ -14,7 +14,8 @@ class BookViewModal : NSObject{
     var isLoding:Bool = false
     // Has no more results to load
     var listEmpty:Bool = false
-    
+    // Page Offset Request
+    var nextPage:Int = 0
     // Is showing favorites
     var showingFavorites:Bool = false
     
@@ -35,7 +36,7 @@ class BookViewModal : NSObject{
     // Get book from request 
     func getBooks() {
         self.isLoding = true
-        self.booksService.getBooks(offset: "\(books.count)") { success, books, error in
+        self.booksService.getBooks(offset: "\(nextPage * LIMITS.limit20.rawValue)") { success, books, error in
             self.isLoding = false
             if success{
                 if let books = books{
@@ -43,6 +44,7 @@ class BookViewModal : NSObject{
                         self.listEmpty = true
                     }
                     self.fetchData(books: books)
+                    self.nextPage += 1
                 }
             }else{
                 print("Error request \(error ?? "")")
@@ -61,6 +63,7 @@ class BookViewModal : NSObject{
         self.listEmpty = false
         self.isLoding = false
         self.books = []
+        self.nextPage = 0
     }
     
     // Set book opened new info
